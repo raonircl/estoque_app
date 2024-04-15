@@ -14,7 +14,7 @@ def cadastro_produtos(produtos)
         nome = gets.chomp
 
         msg_azul("Digite a descrição do produto(#{verde(nome)})", false, false)
-        descricao = gets.chomp
+        categoria = gets.chomp
 
         msg_azul("Digite o preço do produto(#{verde(nome)})", false, false)
         preco = gets.to_f
@@ -22,19 +22,20 @@ def cadastro_produtos(produtos)
         msg_azul("Digite a quantidade em estoque do produto(#{verde(nome)})", false, false)
         quantidade_estoque = gets.to_i
 
-        produto = {
+        produto << {
+          id: Time.now.to_i
           nome: nome,
-          descricao: descricao,
+          categoria: categoria,
           preco: preco,
           quantidade_estoque: quantidade_estoque
         }
-        produtos.push(produto)
 
         limpar_tela
         msg_verde(
           "Produto cadastrado com sucesso!\n
+            #{amarelo(produto[:id])}\n
             #{amarelo(produto[:nome])}\n
-            #{amarelo(produto[:descricao])}\n
+            #{amarelo(produto[:categoria])}\n
             #{amarelo(produto[:preco])}\n
             #{amarelo(produto[:quantidade_estoque])}
           "
