@@ -23,7 +23,7 @@ def cadastro_produtos(produtos)
         quantidade_estoque = gets.to_i
 
         produto << {
-          id: Time.now.to_i
+          id: Time.now.to_i,
           nome: nome,
           categoria: categoria,
           preco: preco,

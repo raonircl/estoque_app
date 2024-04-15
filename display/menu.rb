@@ -1,4 +1,4 @@
-def iniciar_menu(produtos = [])
+def iniciar_menu(produtos)
   loop do
     limpar_tela
     msg_amarelo("Escolha uma das opções abaixo:", false, false)
@@ -13,7 +13,7 @@ def iniciar_menu(produtos = [])
       when 1
         cadastro_produtos(produtos)
       when 2
-        msg_tela("Lista")
+        listar_produtos(produtos)
       when 3
         msg_tela("Retirada")
       when 4
