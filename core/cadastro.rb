@@ -2,8 +2,7 @@ def cadastro_produtos(produtos)
   msg_amarelo("Iniciando cadastro de produto...", true, true, 2)
   loop do
     msg_azul("1 - Cadastrar novo produto?", false, false)
-    msg_azul("2 - Apagar produto", false, false)
-    msg_azul("3 - Sair", false, false)
+    msg_azul("2 - Sair", false, false)
 
     opcao = gets.to_i
 
@@ -41,8 +40,6 @@ def cadastro_produtos(produtos)
           "
         )
       when 2
-        msg_azul("Digite o nome do produto",false, false)
-      when 3
         msg_amarelo("Encerrando cadastro de produtos...", true, true, 2)
         iniciar_menu(produtos)
       else
