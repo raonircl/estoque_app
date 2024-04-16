@@ -15,7 +15,7 @@ def iniciar_menu(produtos)
       when 2
         listar_produtos(produtos)
       when 3
-        msg_tela("Retirada")
+        retirar_estoque(produtos)
       when 4
         msg_amarelo("Programa encerrado!", true, true, 2)
         exit
