@@ -13,7 +13,7 @@ def cadastro_produtos(produtos)
         msg_azul("Digite o nome do produto", false, false)
         nome = gets.chomp
 
-        msg_azul("Digite a descrição do produto(#{verde(nome)})", false, false)
+        msg_azul("Digite a categoria do produto(#{verde(nome)})", false, false)
         categoria = gets.chomp
 
         msg_azul("Digite o preço do produto(#{verde(nome)})", false, false)
@@ -22,7 +22,7 @@ def cadastro_produtos(produtos)
         msg_azul("Digite a quantidade em estoque do produto(#{verde(nome)})", false, false)
         quantidade_estoque = gets.to_i
 
-        produto << {
+        produtos << {
           id: Time.now.to_i,
           nome: nome,
           categoria: categoria,
@@ -33,18 +33,18 @@ def cadastro_produtos(produtos)
         limpar_tela
         msg_verde(
           "Produto cadastrado com sucesso!\n
-            #{amarelo(produto[:id])}\n
-            #{amarelo(produto[:nome])}\n
-            #{amarelo(produto[:categoria])}\n
-            #{amarelo(produto[:preco])}\n
-            #{amarelo(produto[:quantidade_estoque])}
+            #{amarelo(produtos.last[:id])}\n
+            #{amarelo(produtos.last[:nome])}\n
+            #{amarelo(produtos.last[:categoria])}\n
+            #{amarelo(produtos.last[:preco])}\n
+            #{amarelo(produtos.last[:quantidade_estoque])}
           "
         )
       when 2
         msg_azul("Digite o nome do produto",false, false)
       when 3
         msg_amarelo("Encerrando cadastro de produtos...", true, true, 2)
-        iniciar_menu
+        iniciar_menu(produtos)
       else
         msg_vermelho("Opção inválida!", true, true, 1)
     end
